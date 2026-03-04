@@ -13,6 +13,7 @@ import * as path from 'path';
 import * as os from 'os';
 import { IMarketService, IPluginInstaller } from '../interfaces/index.js';
 import { PluginInstaller } from '../services/plugin-installer.js';
+import { ExternalMarketService } from '../services/external-market-service.js';
 import { logger } from '../utils/logger.js';
 import { writeSecureConfig, readSecureConfig, encryptConfig, CONFIG_FILE_MODE } from '../utils/encryption.js';
 import {
@@ -85,7 +86,38 @@ export async function installPlugin(
   try {
     // 1. 从市场获取插件信息
     logger.installTool.info(`正在获取插件信息: ${plugin_id}...`);
-    const pluginInfo = await marketService.getPluginById(plugin_id);
+    let pluginInfo = await marketService.getPluginById(plugin_id);
+
+    // 如果本地市场没找到，尝试从外部市场获取 (npm/GitHub/MCP Marketplace)
+    if (!pluginInfo) {
+      logger.installTool.info(`本地市场未找到插件，尝试从外部市场获取: ${plugin_id}...`);
+      const externalMarket = new ExternalMarketService();
+      const externalPlugin = await externalMarket.getPluginDetails(plugin_id);
+
+      if (externalPlugin) {
+        // 将 ExternalPlugin 转换为 MarketPlugin 兼容格式
+        // 处理版本号：如果是 "latest" 或无效版本，使用默认版本号
+        let version = externalPlugin.version;
+        if (!version || version === 'latest' || version === '*' || !/^\d/.test(version)) {
+          version = '0.0.1';
+        }
+
+        pluginInfo = {
+          id: externalPlugin.id,
+          name: externalPlugin.name,
+          description: externalPlugin.description,
+          version: version,
+          source: externalPlugin.source,
+          skills: externalPlugin.skills,
+          author: externalPlugin.author,
+          tags: externalPlugin.tags,
+          auto_config: externalPlugin.auto_config,
+          default_config: externalPlugin.default_config,
+          configSchema: externalPlugin.configSchema
+        };
+        logger.installTool.info(`从外部市场获取到插件: ${pluginInfo.name}`);
+      }
+    }
 
     if (!pluginInfo) {
       return {

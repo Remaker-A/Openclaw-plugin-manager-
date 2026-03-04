@@ -2,6 +2,7 @@
   "id": "openclaw-plugin-manager",
   "name": "OpenClaw 插件管理器",
   "version": "1.0.0",
+  "author": "Bymax",
   "description": "OpenClaw 插件管理器 MCP 工具 - 支持技能检查和一键安装插件",
   "skills": [
     "plugin_manager",

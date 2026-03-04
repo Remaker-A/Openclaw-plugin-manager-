@@ -132,22 +132,16 @@ export class PluginInstaller {
       const tempDir = await fs.mkdtemp(path.join(os.tmpdir(), 'openclaw-git-'));
       this.log(`克隆 Git 仓库: ${source.url}`);
 
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), this.gitTimeout);
-
       try {
         await execa('git', ['clone', '--depth', '1', source.url, tempDir], {
           stdio: this.verbose ? 'inherit' : 'pipe',
-          timeout: this.gitTimeout,
-          signal: controller.signal
+          timeout: this.gitTimeout
         });
       } catch (error: any) {
-        if (error.name === 'AbortError' || error.timedOut) {
+        if (error.timedOut) {
           throw new Error(`[PluginInstaller] Git 克隆超时: 仓库 ${source.url} 在 ${this.gitTimeout / 1000} 秒内未能完成克隆，请检查网络连接或增加超时时间`);
         }
         throw error;
-      } finally {
-        clearTimeout(timeoutId);
       }
 
       return tempDir;
@@ -196,17 +190,24 @@ export class PluginInstaller {
       throw new Error(`[PluginInstaller] 插件清单格式无效: ${error instanceof Error ? error.message : String(error)}`);
     }
 
-    // 验证必填字段
-    const required = ['id', 'name', 'version', 'description'];
+    // 验证必填字段 (version 可选，缺少时使用默认值)
+    const required = ['id', 'name', 'description'];
     const missing = required.filter(f => !manifest[f]);
 
     if (missing.length > 0) {
       throw new Error(`[PluginInstaller] 清单缺少必填字段: ${missing.join(', ')}`);
     }
 
-    // 验证版本号格式
+    // 如果缺少版本号，使用默认版本
+    if (!manifest.version) {
+      this.log('清单缺少版本号，使用默认版本 0.0.1');
+      manifest.version = '0.0.1';
+    }
+
+    // 验证版本号格式，无效时使用默认版本
     if (!this.isValidVersion(manifest.version)) {
-      throw new Error(`[PluginInstaller] 版本号格式无效: ${manifest.version}`);
+      this.log(`版本号格式无效: ${manifest.version}，使用默认版本 0.0.1`);
+      manifest.version = '0.0.1';
     }
 
     return manifest;
