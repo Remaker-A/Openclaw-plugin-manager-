@@ -1,0 +1,53 @@
+{
+  "name": "openclaw-plugin-manager",
+  "version": "1.0.0",
+  "description": "OpenClaw 插件管理器 MCP 工具 - 支持技能检查和一键安装插件",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "openclaw-plugin-manager": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "clean": "rm -rf dist",
+    "rebuild": "npm run clean && npm run build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "execa": "^9.6.1",
+    "fs-extra": "^11.2.0",
+    "node-fetch": "^2.7.0",
+    "winston": "^3.11.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^20.10.0",
+    "@types/node-fetch": "^2.6.9",
+    "@vitest/coverage-v8": "^4.0.18",
+    "tsx": "^4.7.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "openclaw",
+    "mcp",
+    "plugin-manager",
+    "model-context-protocol"
+  ],
+  "author": "Bymax",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Remaker-A/Openclaw-plugin-manager-"
+  }
+}

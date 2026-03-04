@@ -1,0 +1,207 @@
+{
+  "plugins": [
+    {
+      "id": "demo-plugin",
+      "name": "演示插件",
+      "description": "一个简单的演示插件，用于测试插件安装功能",
+      "version": "1.0.0",
+      "author": "OpenClaw Team",
+      "source": {
+        "type": "npm",
+        "url": "@openclaw/demo-plugin"
+      },
+      "skills": ["skills/demo"],
+      "auto_config": true,
+      "default_config": {
+        "greeting": "你好"
+      },
+      "configSchema": {
+        "type": "object",
+        "properties": {
+          "greeting": {
+            "type": "string",
+            "default": "你好",
+            "description": "问候语"
+          }
+        }
+      },
+      "tags": ["演示", "测试"]
+    },
+    {
+      "id": "web-search",
+      "name": "网页搜索插件",
+      "description": "支持Google、百度、Bing等搜索引擎，提供互联网内容搜索能力",
+      "version": "1.0.0",
+      "author": "OpenClaw Team",
+      "source": {
+        "type": "npm",
+        "url": "@openclaw/web-search"
+      },
+      "skills": ["skills/web_search", "skills/content_extract"],
+      "auto_config": true,
+      "default_config": {
+        "engine": "google",
+        "max_results": 10
+      },
+      "configSchema": {
+        "type": "object",
+        "properties": {
+          "engine": {
+            "type": "string",
+            "enum": ["google", "baidu", "bing"],
+            "default": "google",
+            "description": "默认搜索引擎"
+          },
+          "max_results": {
+            "type": "number",
+            "default": 10,
+            "description": "最大返回结果数"
+          }
+        }
+      },
+      "tags": ["搜索", "互联网", "搜索引擎"]
+    },
+    {
+      "id": "google-search",
+      "name": "Google搜索插件",
+      "description": "专门针对Google搜索引擎的优化插件，支持高级搜索语法",
+      "version": "1.1.0",
+      "author": "OpenClaw Team",
+      "source": {
+        "type": "npm",
+        "url": "@openclaw/google-search"
+      },
+      "skills": ["skills/google_search", "skills/advanced_search"],
+      "auto_config": true,
+      "default_config": {
+        "language": "zh-CN",
+        "safeSearch": true
+      },
+      "tags": ["搜索", "Google", "搜索引擎"]
+    },
+    {
+      "id": "xiaohongshu-mcp",
+      "name": "小红书MCP插件",
+      "description": "搜索、发布、评论小红书内容，支持笔记搜索和内容管理",
+      "version": "2.0.0",
+      "author": "OpenClaw Team",
+      "source": {
+        "type": "npm",
+        "url": "@openclaw/xiaohongshu-mcp"
+      },
+      "skills": ["skills/xiaohongshu_search", "skills/xiaohongshu_publish", "skills/xiaohongshu_comment", "skills/xiaohongshu_like"],
+      "auto_config": true,
+      "default_config": {
+        "mcpUrl": "http://localhost:18060/mcp",
+        "headless": true,
+        "port": 18060
+      },
+      "tags": ["小红书", "社交媒体", "内容发布"]
+    },
+    {
+      "id": "wechat-mcp",
+      "name": "微信MCP插件",
+      "description": "微信公众号和小程序内容管理，支持消息发送、用户管理等",
+      "version": "1.0.0",
+      "author": "OpenClaw Team",
+      "source": {
+        "type": "npm",
+        "url": "@openclaw/wechat-mcp"
+      },
+      "skills": ["skills/wechat_message", "skills/wechat_user", "skills/wechat_menu"],
+      "auto_config": false,
+      "default_config": {
+        "appId": "",
+        "appSecret": ""
+      },
+      "tags": ["微信", "公众号", "小程序"]
+    },
+    {
+      "id": "github-mcp",
+      "name": "GitHub集成插件",
+      "description": "GitHub仓库管理，支持Issue、PR、代码搜索等操作",
+      "version": "1.0.0",
+      "author": "OpenClaw Team",
+      "source": {
+        "type": "npm",
+        "url": "@openclaw/github-mcp"
+      },
+      "skills": ["skills/github_issue", "skills/github_pr", "skills/github_search", "skills/github_repo"],
+      "auto_config": false,
+      "default_config": {
+        "token": ""
+      },
+      "tags": ["GitHub", "代码管理", "Issue", "PR"]
+    },
+    {
+      "id": "doc-processor",
+      "name": "文档处理插件",
+      "description": "处理各种文档格式，支持PDF、Word、Excel等格式的转换和内容提取",
+      "version": "1.2.0",
+      "author": "OpenClaw Team",
+      "source": {
+        "type": "npm",
+        "url": "@openclaw/doc-processor"
+      },
+      "skills": ["skills/document_process", "skills/pdf_convert", "skills/word_convert", "skills/excel_convert"],
+      "auto_config": true,
+      "default_config": {
+        "outputFormat": "txt",
+        "preserveFormatting": true
+      },
+      "tags": ["文档", "PDF", "Word", "转换"]
+    },
+    {
+      "id": "ai-translate",
+      "name": "AI翻译插件",
+      "description": "智能多语言翻译，支持文本、文档、网页翻译",
+      "version": "1.0.0",
+      "author": "OpenClaw Team",
+      "source": {
+        "type": "npm",
+        "url": "@openclaw/ai-translate"
+      },
+      "skills": ["skills/translate_text", "skills/translate_document", "skills/detect_language"],
+      "auto_config": true,
+      "default_config": {
+        "provider": "deepl",
+        "sourceLang": "auto",
+        "targetLang": "zh"
+      },
+      "tags": ["AI", "翻译", "多语言"]
+    },
+    {
+      "id": "code-executor",
+      "name": "代码执行器",
+      "description": "安全执行代码片段，支持Python、JavaScript、Shell等语言",
+      "version": "1.0.0",
+      "author": "OpenClaw Team",
+      "source": {
+        "type": "npm",
+        "url": "@openclaw/code-executor"
+      },
+      "skills": ["skills/execute_python", "skills/execute_javascript", "skills/execute_shell", "skills/execute_code"],
+      "auto_config": true,
+      "default_config": {
+        "timeout": 30000,
+        "maxMemory": 256,
+        "sandbox": true
+      },
+      "tags": ["代码执行", "Python", "JavaScript", "Shell"]
+    },
+    {
+      "id": "database-mcp",
+      "name": "数据库连接插件",
+      "description": "多数据库连接支持，MySQL、PostgreSQL、MongoDB、Redis等",
+      "version": "1.0.0",
+      "author": "OpenClaw Team",
+      "source": {
+        "type": "npm",
+        "url": "@openclaw/database-mcp"
+      },
+      "skills": ["skills/db_query", "skills/db_insert", "skills/db_update", "skills/db_delete", "skills/db_schema"],
+      "auto_config": false,
+      "tags": ["数据库", "MySQL", "PostgreSQL", "MongoDB"]
+    }
+  ]
+}

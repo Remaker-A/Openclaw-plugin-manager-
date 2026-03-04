@@ -1,0 +1,292 @@
+{
+  "mappings": [
+    {
+      "skill_name": "web_search",
+      "keywords": ["网页搜索", "搜索网页", "web搜索", "google搜索", "百度搜索", "bing搜索", "互联网搜索", "在线搜索", "search web", "search internet", "网络搜索"],
+      "plugin_id": "web-search",
+      "description": "搜索互联网内容"
+    },
+    {
+      "skill_name": "google_search",
+      "keywords": ["谷歌搜索", "google", "Google搜索", "谷歌查", "google it"],
+      "plugin_id": "google-search",
+      "description": "使用Google搜索引擎"
+    },
+    {
+      "skill_name": "bing_search",
+      "keywords": ["必应搜索", "bing", "Bing搜索", "微软搜索"],
+      "plugin_id": "bing-search",
+      "description": "使用Bing搜索引擎"
+    },
+    {
+      "skill_name": "xiaohongshu_search",
+      "keywords": ["小红书搜索", "搜索小红书", "小红书内容", "查找小红书", "搜小红书", "小红书查", "小红书笔记搜索", "xiaohongshu", "red note search"],
+      "plugin_id": "xiaohongshu-mcp",
+      "description": "搜索小红书笔记"
+    },
+    {
+      "skill_name": "xiaohongshu_publish",
+      "keywords": ["发布小红书", "发小红书", "发布笔记", "小红书发布", "发小红书笔记", "小红书发帖", "发布到小红书", "publish xiaohongshu"],
+      "plugin_id": "xiaohongshu-mcp",
+      "description": "发布小红书内容"
+    },
+    {
+      "skill_name": "xiaohongshu_comment",
+      "keywords": ["小红书评论", "评论小红书", "小红书留言", "小红书回复评论"],
+      "plugin_id": "xiaohongshu-mcp",
+      "description": "小红书评论功能"
+    },
+    {
+      "skill_name": "xiaohongshu_like",
+      "keywords": ["小红书点赞", "点赞小红书", "小红书收藏", "小红书喜欢"],
+      "plugin_id": "xiaohongshu-mcp",
+      "description": "小红书点赞收藏"
+    },
+    {
+      "skill_name": "wechat_message",
+      "keywords": ["微信消息", "发微信", "微信公众号消息", "微信推送", "发送微信", "wechat", "微信发送"],
+      "plugin_id": "wechat-mcp",
+      "description": "微信消息发送"
+    },
+    {
+      "skill_name": "wechat_user",
+      "keywords": ["微信用户", "公众号用户", "微信粉丝", "微信用户管理"],
+      "plugin_id": "wechat-mcp",
+      "description": "微信用户管理"
+    },
+    {
+      "skill_name": "weibo_post",
+      "keywords": ["发微博", "发布微博", "微博发文", "新浪微博发布", "写微博", "weibo"],
+      "plugin_id": "weibo-mcp",
+      "description": "发布微博"
+    },
+    {
+      "skill_name": "weibo_comment",
+      "keywords": ["微博评论", "评论微博", "微博留言"],
+      "plugin_id": "weibo-mcp",
+      "description": "微博评论功能"
+    },
+    {
+      "skill_name": "document_process",
+      "keywords": ["文档处理", "PDF处理", "Word处理", "文档转换", "处理文档", "文档读取", "document", "doc process"],
+      "plugin_id": "doc-processor",
+      "description": "处理各种文档格式"
+    },
+    {
+      "skill_name": "pdf_merge",
+      "keywords": ["PDF合并", "合并PDF", "PDF拼接", "合并pdf文件", "pdf merge"],
+      "plugin_id": "pdf-toolkit",
+      "description": "合并PDF文件"
+    },
+    {
+      "skill_name": "pdf_split",
+      "keywords": ["PDF拆分", "拆分PDF", "PDF分割", "分割PDF", "pdf split"],
+      "plugin_id": "pdf-toolkit",
+      "description": "拆分PDF文件"
+    },
+    {
+      "skill_name": "pdf_compress",
+      "keywords": ["PDF压缩", "压缩PDF", "PDF减小", "PDF优化大小", "pdf compress"],
+      "plugin_id": "pdf-toolkit",
+      "description": "压缩PDF文件"
+    },
+    {
+      "skill_name": "pdf_watermark",
+      "keywords": ["PDF水印", "添加水印", "PDF加水印", "pdf watermark"],
+      "plugin_id": "pdf-toolkit",
+      "description": "添加PDF水印"
+    },
+    {
+      "skill_name": "excel_read",
+      "keywords": ["读取Excel", "Excel读取", "读取xlsx", "读取表格", "读取excel文件", "read excel"],
+      "plugin_id": "excel-mcp",
+      "description": "读取Excel文件"
+    },
+    {
+      "skill_name": "excel_write",
+      "keywords": ["写入Excel", "Excel写入", "创建Excel", "生成Excel", "导出Excel", "write excel", "create excel"],
+      "plugin_id": "excel-mcp",
+      "description": "写入Excel文件"
+    },
+    {
+      "skill_name": "excel_chart",
+      "keywords": ["Excel图表", "Excel画图", "Excel图表生成", "表格图表"],
+      "plugin_id": "excel-mcp",
+      "description": "生成Excel图表"
+    },
+    {
+      "skill_name": "image_generation",
+      "keywords": ["图片生成", "AI画图", "生成图片", "绘图", "AI绘画", "画图", "生成图像", "create image", "generate image", "AI art", "AI图片"],
+      "plugin_id": "ai-image-gen",
+      "description": "AI图片生成"
+    },
+    {
+      "skill_name": "image_edit",
+      "keywords": ["图片编辑", "编辑图片", "修图", "图片处理", "图片修改", "edit image", "image edit"],
+      "plugin_id": "ai-image-gen",
+      "description": "AI图片编辑"
+    },
+    {
+      "skill_name": "speech_synthesis",
+      "keywords": ["语音合成", "文字转语音", "TTS", "朗读", "语音生成", "配音", "speech synthesis", "text to speech"],
+      "plugin_id": "ai-speech",
+      "description": "语音合成"
+    },
+    {
+      "skill_name": "speech_recognition",
+      "keywords": ["语音识别", "语音转文字", "ASR", "听写", "转录", "speech recognition", "transcribe"],
+      "plugin_id": "ai-speech",
+      "description": "语音识别"
+    },
+    {
+      "skill_name": "translate_text",
+      "keywords": ["翻译", "文本翻译", "翻译文字", "translate", "翻译内容", "语言翻译", "中英翻译", "英中翻译"],
+      "plugin_id": "ai-translate",
+      "description": "文本翻译"
+    },
+    {
+      "skill_name": "translate_document",
+      "keywords": ["文档翻译", "翻译文档", "翻译PDF", "翻译Word", "文件翻译"],
+      "plugin_id": "ai-translate",
+      "description": "文档翻译"
+    },
+    {
+      "skill_name": "github_issue",
+      "keywords": ["GitHub Issue", "创建Issue", "提交Issue", "GitHub问题", "github issue", "open issue"],
+      "plugin_id": "github-mcp",
+      "description": "GitHub Issue管理"
+    },
+    {
+      "skill_name": "github_pr",
+      "keywords": ["GitHub PR", "Pull Request", "创建PR", "提交PR", "合并请求", "github pull request"],
+      "plugin_id": "github-mcp",
+      "description": "GitHub Pull Request管理"
+    },
+    {
+      "skill_name": "github_search",
+      "keywords": ["GitHub搜索", "搜索GitHub", "代码搜索", "github search", "搜索代码仓库"],
+      "plugin_id": "github-mcp",
+      "description": "GitHub代码搜索"
+    },
+    {
+      "skill_name": "gitlab_issue",
+      "keywords": ["GitLab Issue", "GitLab问题", "GitLab工单"],
+      "plugin_id": "gitlab-mcp",
+      "description": "GitLab Issue管理"
+    },
+    {
+      "skill_name": "gitlab_mr",
+      "keywords": ["GitLab MR", "Merge Request", "GitLab合并请求"],
+      "plugin_id": "gitlab-mcp",
+      "description": "GitLab Merge Request管理"
+    },
+    {
+      "skill_name": "execute_code",
+      "keywords": ["执行代码", "运行代码", "代码执行", "跑代码", "execute code", "run code", "代码运行"],
+      "plugin_id": "code-executor",
+      "description": "执行代码"
+    },
+    {
+      "skill_name": "execute_python",
+      "keywords": ["执行Python", "运行Python", "Python执行", "运行py", "execute python", "run python", "python代码"],
+      "plugin_id": "code-executor",
+      "description": "执行Python代码"
+    },
+    {
+      "skill_name": "execute_javascript",
+      "keywords": ["执行JavaScript", "运行JavaScript", "JS执行", "运行JS", "execute javascript", "run js"],
+      "plugin_id": "code-executor",
+      "description": "执行JavaScript代码"
+    },
+    {
+      "skill_name": "execute_shell",
+      "keywords": ["执行Shell", "运行Shell", "执行命令", "Shell命令", "execute shell", "run shell", "bash执行"],
+      "plugin_id": "code-executor",
+      "description": "执行Shell命令"
+    },
+    {
+      "skill_name": "db_query",
+      "keywords": ["数据库查询", "SQL查询", "查询数据库", "db query", "sql query", "数据库操作"],
+      "plugin_id": "database-mcp",
+      "description": "数据库查询"
+    },
+    {
+      "skill_name": "db_insert",
+      "keywords": ["数据库插入", "插入数据", "新增数据", "db insert", "insert into"],
+      "plugin_id": "database-mcp",
+      "description": "数据库插入"
+    },
+    {
+      "skill_name": "http_get",
+      "keywords": ["HTTP GET", "GET请求", "发送GET", "http get", "fetch url", "请求接口"],
+      "plugin_id": "api-mcp",
+      "description": "HTTP GET请求"
+    },
+    {
+      "skill_name": "http_post",
+      "keywords": ["HTTP POST", "POST请求", "发送POST", "http post", "post数据", "提交表单"],
+      "plugin_id": "api-mcp",
+      "description": "HTTP POST请求"
+    },
+    {
+      "skill_name": "graphql_query",
+      "keywords": ["GraphQL查询", "GraphQL", "graphql query", "gql查询"],
+      "plugin_id": "api-mcp",
+      "description": "GraphQL查询"
+    },
+    {
+      "skill_name": "calendar_create",
+      "keywords": ["创建日程", "添加日程", "新建日历", "创建事件", "添加事件", "schedule", "calendar", "安排日程"],
+      "plugin_id": "calendar-mcp",
+      "description": "创建日历事件"
+    },
+    {
+      "skill_name": "calendar_query",
+      "keywords": ["查询日程", "查看日程", "日历查询", "查看日历", "今天日程", "日程安排"],
+      "plugin_id": "calendar-mcp",
+      "description": "查询日历事件"
+    },
+    {
+      "skill_name": "email_send",
+      "keywords": ["发送邮件", "发邮件", "发送Email", "send email", "邮件发送", "发信"],
+      "plugin_id": "email-mcp",
+      "description": "发送邮件"
+    },
+    {
+      "skill_name": "email_read",
+      "keywords": ["读取邮件", "查看邮件", "收邮件", "read email", "邮件列表"],
+      "plugin_id": "email-mcp",
+      "description": "读取邮件"
+    },
+    {
+      "skill_name": "weather_current",
+      "keywords": ["天气", "查询天气", "天气预报", "今天天气", "天气情况", "weather", "气温"],
+      "plugin_id": "weather-mcp",
+      "description": "查询当前天气"
+    },
+    {
+      "skill_name": "weather_forecast",
+      "keywords": ["天气预报", "未来天气", "几天天气", "weather forecast", "天气预测"],
+      "plugin_id": "weather-mcp",
+      "description": "天气预报"
+    },
+    {
+      "skill_name": "air_quality",
+      "keywords": ["空气质量", "AQI", "PM2.5", "空气指数", "空气污染"],
+      "plugin_id": "weather-mcp",
+      "description": "空气质量查询"
+    },
+    {
+      "skill_name": "news_fetch",
+      "keywords": ["新闻", "获取新闻", "今日新闻", "最新新闻", "新闻资讯", "news", "头条"],
+      "plugin_id": "news-mcp",
+      "description": "获取新闻"
+    },
+    {
+      "skill_name": "news_search",
+      "keywords": ["搜索新闻", "新闻搜索", "查找新闻", "新闻查询", "search news"],
+      "plugin_id": "news-mcp",
+      "description": "搜索新闻"
+    }
+  ]
+}
